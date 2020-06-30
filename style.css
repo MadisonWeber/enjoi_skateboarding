@@ -1,0 +1,164 @@
+
+:root{
+    --main-orange:#f08d24;;
+    --main-yellow: #fedd00;
+    --main-blue: rgb(66, 220, 255);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.2;
+    font-family: 'Mukta';
+}
+
+body{
+    background-color: var(--main-orange);
+}
+
+/*Navigation */
+
+
+
+.nav-container{
+    min-height: 5.5rem;
+    max-height: 7rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    grid-gap: 4px;
+    background-color: var(--main-orange);
+
+}
+
+.nav-container img{
+
+    height: 100%;
+    width: auto;
+}
+
+
+
+.nav-container .nav-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.nav-container .navBtn{
+    color: var(--main-yellow);
+    background-color: var(--main-orange);
+    font-size: 1.5rem;
+    border-radius: 4px;
+    padding: .4rem;
+    min-width: 4.5rem;
+    outline: none;
+    border: none;
+
+} 
+
+
+.nav-container .navBtn:hover{
+
+    opacity: 50%;
+}
+
+
+
+.shopping-icons{
+    justify-self: right;
+    margin-right: 2rem;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    
+}
+
+
+
+.shopping-icons span{
+    color:black;
+    font-size: 1.5rem;
+    pointer-events: none;
+}
+
+.shopping-icons button{
+    background-color: var(--main-orange);
+    border: none;
+    font-size: 1.5rem;
+
+}
+
+/* Main Container */
+
+
+.first-container{
+    height: 90vh;
+    background:url(photos/enjoy-new1.jpg) no-repeat center center/cover;
+}
+
+.vid-holder{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+
+.vid-holder iframe{
+    border: 2px solid white;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+/* Section 2 */
+
+h1{
+    color:var(--main-blue);
+    font-size:4rem;
+    text-shadow: 1px 1px black;
+    text-align: center;
+    margin: 8px; 
+}
+
+.second-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 5px;
+    grid-gap: 5px;
+}
+
+.second-container > *{
+    border: 1px solid black;
+}
+
+.second-container > div{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    
+}
+
+.second-container > div > div > *{
+    margin: .5rem;
+}
+
+.buy{
+    display: block;
+    padding: .5rem;
+    background-color: var(--main-orange);
+    outline: none;
+    font-size: .9rem;
+    border:none;
+    border-radius: 2px;
+}
+
+.buy:hover{
+    border: 1px solid black;
+    opacity: 80%;
+}
+
