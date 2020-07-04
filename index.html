@@ -24,10 +24,20 @@
             </div>
             <div class = 'shopping-icons'>                
                 <i class="fas fa-money-check-alt faX2"></i>
-                <span>Cart</span>
-                <button class= 'btn checkout-number-items'>0</button>
+                <span>Cart Items</span>
+                <button class= 'btn checkout-number-items' id = 'myId'></i>0</button>
+                <i class="fas fa-chevron-down" id = 'down-check'></i>
             </div>
         </div>
+    <div class = 'hidden-checkout'>
+        <div class = 'hidden-inside'>
+            <!---<button class = 'btn deleteBtn'>Delete</button> --->
+            <div class = 'productTotal'>
+                <h2>Total: $</h2>
+                <span class = 'final-total'>0</span>
+            </div>
+        </div>
+    </div>
     </nav>
     <section class = 'first'>
         <div class = 'first-container'>
@@ -38,7 +48,7 @@
         </div>
     </section>
     <section class = 'second'>
-        <h1>Buy A Board You Poser!! </h1>
+        <h1>Buy A <span class="yel">Board</span>..Or Don't </h1>
         <div class="second-container">
              <div class="product firstp">
                 <img src="photos/skateboard1.jpeg">
