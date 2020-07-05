@@ -10,6 +10,7 @@ downButton.addEventListener('click', openDropdown);
 function openDropdown (){
    if(hiddenCheckout.style.opacity ==='0'){
         hiddenCheckout.style.opacity = '100'
+      
 
     } else {
         hiddenCheckout.style.opacity = '0'
@@ -17,8 +18,6 @@ function openDropdown (){
     }
 
 }
-
-
 
 for(let button of buyButtons){
     let listen = button.addEventListener('click', addChange);
@@ -49,21 +48,24 @@ function addToCart(object){
     let parent = document.querySelector('.hidden-inside');
     let addElement = document.createElement('div');
     addElement.classList.add('cartProduct')
-    addElement.innerHTML = `<h3>${object.name}:</h3> <p>${object.price}</p> <button class = "btn deleteBtn">Delete</button>`
+    addElement.innerHTML = `<h3>${object.name}:</h3> <p>${object.price}</p> <button type = 'button' class = "btn deleteBtn">Delete</button>`
     parent.parentNode.insertBefore(addElement, parent);
 
     updatePrice()
+    checkForButton()
 }
 
+/* Function To Update Price, Called From Many Other Functions */
 
 function updatePrice(){
     let valueArray = []
     let total = document.querySelector('.final-total');
     let products = document.querySelectorAll('.cartProduct');
+    let subtotal = document.querySelector('.subTotal')
+
     products.forEach((product) =>{
         let ptag = product.querySelector('p');
-        valueArray.push(ptag.innerHTML)
-        
+        valueArray.push(ptag.innerHTML)        
     })
 
     const ret_val = valueArray.map((num) =>{
@@ -71,10 +73,34 @@ function updatePrice(){
             return parseFloat(newNum)
     })
 
-    total.textContent = ret_val.reduce( (a,b) =>{
+    if(valueArray.length === 0){
+        total.textContent = 0;
+        subtotal.textContent = 0;
+        hiddenCheckout.style.opacity = '0';
+        cartNum.style.backgroundColor = "#f08d24";
+        cartNum.style.border = 'none'
+    }else{
+        let fullreturn = ret_val.reduce( (a,b) =>{
         return a + b
-    })
+        })
+        total.textContent = "$" + fullreturn.toFixed(2) + ' CAD'
+        subtotal.textContent = "$" + (fullreturn * 1.15).toFixed(2) + ' CAD' }
+}
+  
 
+/* Add Listener To Delete Cart Item */
+
+function checkForButton(){
+    let myDeleteButtons = document.querySelectorAll('.deleteBtn')
+    console.log(myDeleteButtons)
+    for(let btn of myDeleteButtons){
+        btn.addEventListener('click', removeBtn)
+    }
 }
 
+function removeBtn(e){
+    e.path[1].remove()
+    cartNum.innerText = parseInt(cartNum.innerText) -1
+    updatePrice()
+}
 

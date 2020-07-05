@@ -7,6 +7,7 @@
     <script src="https://kit.fontawesome.com/a441d9e50e.js" crossorigin="anonymous"></script>
     <title>Enjoi Skateboarding</title>
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Mukta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     
 </head>
@@ -29,12 +30,20 @@
                 <i class="fas fa-chevron-down" id = 'down-check'></i>
             </div>
         </div>
-    <div class = 'hidden-checkout'>
+    <div class = 'hidden-checkout' style='opacity:0 ;' >
+        <h2 class = 'checkoutHeader'>Checkout</h2>
         <div class = 'hidden-inside'>
-            <!---<button class = 'btn deleteBtn'>Delete</button> --->
-            <div class = 'productTotal'>
-                <h2>Total: $</h2>
-                <span class = 'final-total'>0</span>
+            
+            <div class="productTotal">
+                <div>
+                    <h2>Total</h2>
+                    <span class = 'final-total'> <span class = 'dollar-sign'>$</span>  0</span>
+                 </div>
+                 <div>
+                    <h2>Total After Tax</h2>
+                    <span class = 'subTotal'><span class = 'dollar-sign'>$</span></span>
+                </div>
+                <button type = 'button' class = 'checkoutBtn'>Checkout</button>
             </div>
         </div>
     </div>
