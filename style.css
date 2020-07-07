@@ -101,7 +101,7 @@ body{
 
 #down-check{
     font-size: 1rem;
-    opacity: 0;
+    display: none;
 }
 
 
@@ -120,9 +120,11 @@ body{
     text-align: center;
     display: grid;
     justify-content: space-evenly;
-    overflow: scroll;
+    overflow: auto;
 
 }
+
+
 
 .deleteBtn{
     color: white;
@@ -135,9 +137,13 @@ body{
 
 .hidden-inside{
     display: flex;
-    overflow: scroll;
+    overflow: auto;
+}
 
+/* CartProduct added */
 
+.addContainer{
+    overflow:scroll;
 }
 
 .cartProduct{
@@ -145,12 +151,16 @@ body{
     border-bottom: 1px solid rgba(71, 66, 66, 0.2);
     align-items: center;
     padding: 0px 5px;
+    margin: 3px 0;
 }
 
 .cartProduct h3{
     font-size: 1.1rem;
-    
-    
+}
+
+.cartProduct img{
+    max-height: 5.2rem;
+    width: auto;
 }
 
 .productTotal{
@@ -184,10 +194,75 @@ body{
     border: 0.5px solid black;
 }
 
+.checkoutBtn:hover{
+    opacity: 0.8;
+    border: 2px solid black;
+   /* animation-name: expandBtn;
+    animation-delay: 1s;
+    animation-duration: 3s; */
+}
+
+@keyframes expandBtn {
+    0% {width: 6rem; height: 2rem; top:50%;}
+    100% {width: 10rem; height: 7rem; top:50%;}
+  }
+  
+
+
 .checkoutHeader{
     font-family: 'Permanent Marker';
     margin: 4px 0;
-    height: 10px;
+    min-height: 10px;
+}
+
+/* Checkout Animation */
+
+.checkoutAnimation{
+    border: 1px solid black;
+    position: fixed;
+    width: 340px;
+    height: 500px;
+    right: 1.5rem;
+    top: 5.5rem;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    display: none;
+    overflow: auto;
+}
+
+.checkoutAnimation h3{
+    color: var(--main-yellow);
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-family: 'Permanent Marker';
+    text-shadow: 1px 1px black;
+
+}
+
+.checkoutAnimation img{
+    max-width: 75%;
+    max-height: auto;
+    margin: auto;
+    margin-top: 0;
+
+}
+
+.checkoutAnimation button{
+    background-color: var(--main-orange);
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    outline: none;
+    border: 1px solid black;
+    border-radius: .2rem;
+    font-size: 1.2rem;
+}
+
+.checkoutAnimation button:hover{
+    width: 91%;
+    height: 81%;
 }
 
 /* Main Container */
