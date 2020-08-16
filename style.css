@@ -123,6 +123,7 @@ body{
     display: grid;
     justify-content: space-evenly;
     overflow: auto;
+    z-index: 2;
 
 }
 
@@ -278,7 +279,7 @@ body{
     right: 1.1rem;
     margin-right: 20px;
     font-size: 2.2rem;
-    z-index: -2;
+
 
 }
 
