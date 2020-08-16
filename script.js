@@ -1,4 +1,3 @@
-// Make Function To Change Cart //
 
 
 /* Common Needed Dom Elements */
@@ -8,12 +7,17 @@ const downButton = document.querySelector('#down-check');
 const hiddenCheckout = document.querySelector('.hidden-checkout');
 const checkoutBtn = document.querySelector('.checkoutBtn');
 const animationDiv = document.querySelector('.checkoutAnimation');
+const slideshowBtn = document.querySelectorAll('.slideshowBtn');
+const slideshowLeft = document.querySelector('.btn-left');
+const slideshowRight = document.querySelector('.btn-right');
+const slideshowImg = document.querySelector('.change-img');
+const slideshowOverlay = document.querySelector('.slideshow-overlay')
+const slideshowContainer = document.querySelector('.slideshow-container')
+const body = document.querySelector("body > *:not(.slideshow-container)")
+const exitBtn = document.querySelector('.exit-btn');
+const slideshowText = document.querySelector('.slideshow-text');
+const signUpBtn = document.querySelector('.signup-btn');
 
-/* Event Listeners */
-
-
-downButton.addEventListener('click', openDropdown);
-checkoutBtn.addEventListener('click', checkout);
 
 
 /* Listen For Cart Buttons */
@@ -24,6 +28,9 @@ for(let button of buyButtons){
 
 
 /*Function To open the Cart Menu */
+
+downButton.addEventListener('click', openDropdown);
+
 function openDropdown (){
    if(hiddenCheckout.style.display ==='none'){
         hiddenCheckout.style.display = 'grid'
@@ -58,13 +65,10 @@ function addChange (e){
 
 
 function addToCart(object){
-    /*let parent = document.querySelector('.hidden-inside'); */
     let addElement = document.createElement('div');
     addElement.classList.add('cartProduct')
     addElement.innerHTML = `<img src = ${object.imgref} alt = ''/> <h3>${object.name}:</h3> <p>${object.price}</p> <button type = 'button' class = "btn deleteBtn">Delete</button>`
     document.querySelector('.addContainer').appendChild(addElement);
-    /*parent.parentNode.insertBefore(addElement, parent);*/
-
     updatePrice()
     checkForButton()
 }
@@ -114,16 +118,16 @@ function checkForButton(){
 function removeBtn(e){
     e.path[1].remove()
     cartNum.innerText = parseInt(cartNum.innerText) -1
+
     updatePrice()
 }
 
 
 /* Add Listener on Checkout Button */
-
-
-
+checkoutBtn.addEventListener('click', checkout);
 
 function checkout() {
+    //localStorage.setItem('cart-items', JSON.stringify(document.querySelector('.addContainer')))
     document.querySelector('.addContainer').innerHTML = '';
     cartNum.innerText = 0;
     downButton.style.display = 'none';
@@ -131,6 +135,7 @@ function checkout() {
     hiddenCheckout.style.display = "none";
     animationDiv.style.display = 'grid';
     animationDiv.innerHTML = '<h3>Thank You For Your Purchase</h3><img src = photos/enjoy_nav_pic.png  alt = ""/> <button class = "resumeShopping">Shop More</button>'
+
     checkForShopMoreButton()
 
 }
@@ -145,3 +150,61 @@ function resetShopping(){
     animationDiv.style.display = 'none';
     hiddenCheckout.style.display = 'none';
 }
+
+
+
+/* Functionality For SlideShow */
+
+slideshowLeft.addEventListener('click', pictureLeft);
+slideshowRight.addEventListener('click', pictureRight);
+
+
+function pictureRight(){
+    let current = Number(slideshowImg.src.slice(-5, -4));
+    let replace = current > 7 ? 1 : current + 1;
+    slideshowImg.src = `ads/image_${replace}.jpg`
+}
+
+function pictureLeft(){
+    let current = Number(slideshowImg.src.slice(-5, -4));
+    let replace = current <= 1 ? 8 : current - 1;
+    slideshowImg.src = `ads/image_${replace}.jpg`
+}
+
+
+// Slideshow OnClick
+
+slideshowOverlay.addEventListener('click', enhanceSlideshow);
+
+
+ function enhanceSlideshow() {
+     slideshowOverlay.classList.add('hide');
+     slideshowText.innerText = '';
+     slideshowContainer.style.transition = 'ease-in 1s';
+     exitBtn.style.display = 'block'
+     slideshowLeft.style.display = 'inline'
+     slideshowRight.style.display = 'inline'
+ }
+
+// Sideshow Close
+
+exitBtn.addEventListener('click', closeSlideshow);
+
+function closeSlideshow(){
+    slideshowOverlay.classList.remove('hide')
+    slideshowText.innerText = 'Click to Take a look at some of our Recent Ads'
+     exitBtn.classList.add('hide')
+     exitBtn.style.display = 'none'
+     slideshowLeft.style.display = 'none'
+     slideshowRight.style.display = 'none'
+
+}
+
+signUpBtn.addEventListener('click', cleanSignup);
+
+function cleanSignup(e){
+    const input = document.querySelector('.signup-input')
+    input.value = ''
+}
+
+

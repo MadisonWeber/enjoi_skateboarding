@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Mukta&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel = 'icon' type = "image/png" href = "photos/enjoy_nav_pic.png">
     
 </head>
 <body>
@@ -30,37 +32,35 @@
                 <i class="fas fa-chevron-down" id = 'down-check'></i>
             </div>
         </div>
-    <div class = 'checkoutAnimation'></div>
-    <div class = 'hidden-checkout' style='display: none;' >
-        <h2 class = 'checkoutHeader'>Checkout</h2>
-        <div class ='addContainer'> </div>
-        <div class = 'hidden-inside'>
-            <div class="productTotal">
-                <div>
-                    <h2>Total</h2>
-                    <span class = 'final-total'> <span class = 'dollar-sign'>$</span>  0</span>
-                 </div>
-                 <div>
-                    <h2>Total After Tax</h2>
-                    <span class = 'subTotal'><span class = 'dollar-sign'>$</span></span>
+        <div class = 'checkoutAnimation'></div>
+        <div class = 'hidden-checkout' style='display: none;' >
+            <h2 class = 'checkoutHeader'>Checkout</h2>
+            <div class ='addContainer'> </div>
+            <div class = 'hidden-inside'>
+                <div class="productTotal">
+                    <div>
+                        <h2>Total</h2>
+                        <span class = 'final-total'> <span class = 'dollar-sign'>$</span>  0</span>
+                    </div>
+                    <div>
+                        <h2>Total After Tax</h2>
+                        <span class = 'subTotal'><span class = 'dollar-sign'>$</span></span>
+                    </div>
+                    <button type = 'button' class = 'checkoutBtn'>Checkout</button>
                 </div>
-                <button type = 'button' class = 'checkoutBtn'>Checkout</button>
             </div>
         </div>
-    </div>
     </nav>
     <section class = 'first'>
         <div class = 'first-container'>
-            <div class = 'vid-holder'>
-                <iframe width="760" height="480" src="https://www.youtube.com/embed/r-bkrRGm4Bo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-
+                <iframe src="https://www.youtube.com/embed/r-bkrRGm4Bo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h1 class = 'wallpaper-title '>this is an <span class = 'yel'>enjoi</span> wallpaper</h1>
         </div>
     </section>
     <section class = 'second'>
         <h1>Buy A <span class="yel">Board</span>..Or Don't </h1>
         <div class="second-container">
-             <div class="product firstp">
+             <div class="product firstp" data-aos="fade-right">
                 <img src="photos/skateboard1.jpeg">
                 <div>
                     <h3 class="product-name">Gas Mask Pro</h3>
@@ -70,7 +70,7 @@
              </div>
         
 
-            <div class="product secondp">
+            <div class="product second" data-aos="fade-right">
                <img src="photos/skateboard2.jpeg">
                <div>
                     <h3 class="product-name">Umbrella Pro</h3>
@@ -80,7 +80,7 @@
             </div>
        
 
-            <div class="product thirdp">
+            <div class="product thirdp" data-aos="fade-right">
                 <img src="photos/skateboard3.jpeg">
                 <div>   
                     <h3 class="product-name">Scribbles Pro</h3>
@@ -89,7 +89,7 @@
                 </div>
             </div>
 
-            <div class="product fourthp">
+            <div class="product fourthp" data-aos="fade-right">
                 <img src="photos/skateboard4.jpeg">
                 <div>
                     <h3 class="product-name">Enjoi Stripes Pro</h3>
@@ -99,7 +99,7 @@
              </div>
         
 
-            <div class="product fifthp">
+            <div class="product fifthp" data-aos="fade-right">
                <img src="photos/skateboard5.jpeg">
                <div>
                     <h3 class="product-name">Plz Help Pro</h3>
@@ -109,7 +109,7 @@
             </div>
        
 
-            <div class="product sixthp">
+            <div class="product sixthp" data-aos="fade-right">
                 <img src="photos/skateboard-6.jpeg">
                 <div>
                     <h3 class="product-name">Sailor Dog Pro</h3>
@@ -117,15 +117,55 @@
                     <button class ='buy'>Buy Now</button>
                 </div>
             </div>
-   </div>
     </section>
-    
+    <div class = 'slideshow'>
 
+            <div class="slideshow-container">
+                <div class = 'slideshow-overlay'><p class = 'slideshow-text'>Click to Take a look at some of our Recent Ads</p></div>
+                <button class = 'btn btn-left'> <i class = 'fas fa-angle-left'></i> </button>
+                <img class = 'change-img' src = 'ads/image_1.jpg' alt = ''>
+                <button class = 'btn btn-right'> <i class = 'fas fa-angle-right'></i> </button>
+                <button class = 'btn exit-btn '><i class="fas fa-times "></i></button> 
+            </div>
+            <div class="regrowth-container">
+                <img class = 'regrowth' src = 'photos/rsz_regrowth-enjoi.jpg'>
+            </div>
+            
+    </div>
+    <div class="footer">
+        <div class="footer-icons">
+            <a href = "https://www.facebook.com/enjoi/" target="_blank"><i class = 'fab fa-facebook'></i></a>
+            <a href = 'https://twitter.com/enjoi?lang=en' target="_blank"><i class = 'fab fa-twitter'></i></a>
+            <a href = 'https://www.instagram.com/enjoi/?hl=en' target="_blank"><i class = 'fab fa-instagram'></i></a>
+            <a href = 'https://www.youtube.com/channel/UCvbIUeRJOoebQUcYLazKX_A' target="_blank"><i class = 'fab fa-youtube'></i></a>
+        </div>
+        <div class="footer-links">
+            <a href = '#'>Blog <span class = 'separater'>/</span></a>
+            <a href = '#'>Archive <span class = 'separater'>/</span></a>
+            <a href = '#'>Retailers <span class = 'separater'>/</span></a>
+            <a href = '#'>Team <span class = 'separater'>/</span></a>
+            <a href = '#'>Affiliations <span class = 'separater'>/</span></a>
+            <a href = '#'>Clothes <span class = 'separater'>/</span></a>
+            <a href = '#'>Amateurs <span class = 'separater'>/</span></a>
+            <a href = '#'>News<span class = 'separater'></span></a>
+        </div>
+        <div class="footer-sign-up">
+            <h4>Sign Up To Stay Updated</h4>
+            <div class="signup-container">
+                <input class = 'signup-input' type="text" placeholder="Enter Your Email..">
+                <button class = 'btn signup-btn' type = 'submit'>Sign Up</button>
+            </div>
+        </div> 
 
-
-
-
-
+    </div>
+ 
     <script src = 'script.js'></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 90, 
+        duration: 800, 
+      });
+    </script>
 </body>
 </html>
