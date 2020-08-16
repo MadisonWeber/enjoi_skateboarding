@@ -274,7 +274,7 @@ body{
 
 .wallpaper-title{
     position: absolute;
-    bottom: 7rem;
+    bottom: 5rem;
     right: 1.1rem;
     margin-right: 20px;
     font-size: 2.2rem;
@@ -724,6 +724,10 @@ h1{
 
     @media(max-width: 420px){
 
+        .nav-container{
+            min-height: 3rem;
+            max-height: 5rem;
+        }
 
 
         .regrowth-container{
@@ -754,10 +758,16 @@ h1{
 
         .wallpaper-title{
             font-size: 1rem;
+            bottom: 3rem;
+            right: 1.1rem;
         }
 
         h1{
             font-size: 1.2rem;
         }
 
+
+        .regrowth{
+            max-width: 320px;
+        }
     }
